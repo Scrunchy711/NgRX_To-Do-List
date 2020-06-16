@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "NgRX-ToDoList",
+      "public": "dist/NgRX-ToDoList",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

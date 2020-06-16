@@ -1,0 +1,19 @@
+
+<mat-nav-list>
+    <a *ngIf="!(isAuth$ | async)" mat-list-item routerLink = "" (click) = "closeSidenav()">
+        <mat-icon>login</mat-icon>
+        <span class = "nav-caption">Login</span>
+    </a>
+    <a *ngIf="!(isAuth$ | async)" mat-list-item routerLink = "/signup" (click) = "closeSidenav()">
+        <mat-icon>how_to_reg</mat-icon>
+        <span class = "nav-caption">Sign Up</span>
+    </a>
+    <a *ngIf="isAuth$ | async" mat-list-item routerLink = "/addActivity" (click) = "closeSidenav()">
+        <mat-icon>format_list_numbered</mat-icon>
+        <span class = "nav-caption">To-Do-List</span>
+    </a>
+    <mat-list-item *ngIf="isAuth$ | async" (click)="onLogout()">
+        <mat-icon>eject</mat-icon>
+        <span class="nav-caption">Log Out</span>
+    </mat-list-item>
+</mat-nav-list>

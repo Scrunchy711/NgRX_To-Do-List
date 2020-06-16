@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "to-do-list-91661": {
+      "hosting": {
+        "NgRX-ToDoList": [
+          "to-do-list-91661"
+        ]
+      }
+    }
+  }
+}

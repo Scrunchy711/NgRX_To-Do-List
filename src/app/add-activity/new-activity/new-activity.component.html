@@ -1,0 +1,53 @@
+<section 
+class="new-activity">
+    <form
+    fxLayout="column" 
+    fxLayoutAlign = "center center"
+    fxLayoutGap = "10px"
+    (ngSubmit)="addNewActivity(f)" 
+    #f="ngForm">
+        <h1>Add Activity!</h1>
+        <mat-form-field>
+            <input 
+           matInput
+           type = "number" 
+           placeholder = "Enter Priority" 
+           ngModel name="priority" 
+           required>
+           <mat-hint>1 being the highest priority.</mat-hint>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input 
+            matInput 
+            placeholder = "Enter Activity" 
+            ngModel name="activity" 
+            required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>From:</mat-label>
+            <input
+            matInput
+            type = "time"
+            ngModel name = "start_time"
+            required
+            >
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>To:</mat-label>
+            <input
+            matInput
+            type = "time"
+            ngModel name = "end_time"
+            required
+            >
+        </mat-form-field>
+        <br>
+        <button type="submit" color="primary" mat-raised-button [disabled]="f.invalid">Add Activity</button>
+        <div *ngIf= "!valid">
+            <button  (click) = "resetButton(f)" type = "reset" color="warn" mat-raised-button [disabled]="f.invalid">Reset Inputs</button>
+        </div>
+    </form>
+</section>
